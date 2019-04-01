@@ -13,6 +13,10 @@ def index():
 def main():
     return render_template('app.html', version=version)
 
+@app.route('/app/base64')
+def b64():
+    return render_template('b64.html', version=version)
+
 @app.route('/help')
 def help():
     return render_template('help.html', version=version)
