@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+
+  reiwadrawing.walkingmask.tk:
+    build: ./
+    image: reiwadrawing.walkingmask.tk:latest
+    container_name: reiwadrawing.walkingmask.tk
+    restart: always
+    environment:
+      VIRTUAL_HOST: reiwadrawing.walkingmask.tk
+      LETSENCRYPT_HOST: reiwadrawing.walkingmask.tk
+      LETSENCRYPT_EMAIL: walkingmask@gmail.com
+    expose:
+      - 80
+    entrypoint: python /app/app.py
+
+networks:
+  default:
+    external:
+      name: shared
