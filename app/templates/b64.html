@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-70610952-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-70610952-3');
+  </script>
+  <meta charset="utf-8">
+  <title>令和ドロー</title>
+  <meta name="description" content="令和という時代の始まりに。">
+  <meta name="keywords" content="reiwa,reiwadrawing,令和,令和ドロー,gif,gif生成">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/skyblue.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/drawingboard.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+</head>
+
+<body>
+  <div id="header" class="container bg-app text-center">
+    <span>令和ドロー version {{ version }}</span>
+  </div>
+
+  <div id="drawing-container" class="container text-center padding-x-10 padding-y-10">
+    <div id="drawing-container-inner">
+      <div id="drawing-board"></div>
+    </div>
+    <button id="run" class="btn margin-top-10">生成する</button>
+  </div>
+
+  <div id="progress-container" class="container text-center padding-top-20 hide">
+      <p>生成中...</p>
+      <progress id="progress" max="100" value="0">0%</progress>
+      <p class="padding-top-30">[AD]</p>
+      <div class="ad">
+        <a href="https://hb.afl.rakuten.co.jp/hsc/182fcc81.db8b019a.182fcc82.9121da0e/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjowLCJjYXQiOiIxMjAiLCJiYW4iOiIxNDIxNzk5In0%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hsb/182fcc81.db8b019a.182fcc82.9121da0e/?me_id=2100001&me_adv_id=1421799&t=pict" border="0" style="margin:2px" alt="" title=""></a>
+      </div>
+    </div>
+  
+    <div id="result-container" class="container text-center padding-y-50 hide">
+      <div><img id="result-image"></div>
+      <button id="reload" class="btn margin-top-50 margin-bottom-30" onclick="window.location.reload();">もう一度</button>
+      <p class="margin-bottom-0">[AD]</p>
+      <div class="ad">
+          <a href="https://hb.afl.rakuten.co.jp/hsc/182fd228.5114a39c.182fcc82.9121da0e/?link_type=pict&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJwaWN0IiwiY29sIjowLCJjYXQiOiIxMjIiLCJiYW4iOiI1MzI3MzYifQ%3D%3D" target="_blank" rel="nofollow noopener noreferrer" style="word-wrap:break-word;"  ><img src="https://hbb.afl.rakuten.co.jp/hsb/182fd228.5114a39c.182fcc82.9121da0e/?me_id=2100001&me_adv_id=532736&t=pict" border="0" style="margin:2px" alt="" title=""></a>
+      </div>
+    </div>
+  
+  <script>
+    var _pointsPath = "{{ url_for('static', filename='js/points.json') }}";
+    var _imagePath = "{{ url_for('static', filename='cropped') }}";
+    var _workerScript = "{{ url_for('static', filename='js/lib/gifjs/gif.worker.js') }}";
+  </script>
+  <script src="{{ url_for('static', filename='js/lib/jquery-1.10.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/lib/drawingboard.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/init.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/lib/perspective.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/lib/gifjs/gif.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/b64.js') }}"></script>
+</body>
+
+</html>
