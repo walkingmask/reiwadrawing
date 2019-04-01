@@ -94,7 +94,7 @@ async function generate (drawing, callback) {
     canvas.height = imageHeight;
     let context = canvas.getContext('2d');
 
-    let p1 = new Perspective(context, makeColorRect(drawing, '#ececec'));
+    let p1 = new Perspective(context, makeColorRect(drawing, '#fdf9fa'));
     let p2 = new Perspective(context, drawing);
 
     let gifGenerator = new GIF({
