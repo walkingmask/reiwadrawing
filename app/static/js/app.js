@@ -2,12 +2,12 @@ var imagePath = _imagePath + '/';
 var imagePrefix = 'i';
 var imageExt = '.png';
 var images = [];
-var imageWidth = 260;
-var imageHeight = 170;
+var imageWidth = 364;
+var imageHeight = 236;
 var frameWidth = 81;
 var frameHeight = 116;
-var quality = 5;
-var delay = 75;
+var quality = 10;
+var delay = 60;
 var imagePreLoaded = false;
 var progress = 0;
 
@@ -94,7 +94,7 @@ async function generate (drawing, callback) {
     canvas.height = imageHeight;
     let context = canvas.getContext('2d');
 
-    let p1 = new Perspective(context, makeColorRect(drawing, '#e7e7e7'));
+    let p1 = new Perspective(context, makeColorRect(drawing, '#ececec'));
     let p2 = new Perspective(context, drawing);
 
     let gifGenerator = new GIF({
