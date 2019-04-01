@@ -4,7 +4,7 @@ var board = new DrawingBoard.Board('drawing-board', {
         { Size: { type: 'dropdown' } },
         'Navigation',
     ],
-    background: '#e7e7e7',
+    background: '#ececec',
     size: 10,
     enlargeYourContainer: true,
     droppable: true,

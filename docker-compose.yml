@@ -2,18 +2,18 @@ version: "2"
 
 services:
 
-  reiwadrawing.walkingmask.tk:
+  dev.localhost:
     build: ./
-    image: reiwadrawing.walkingmask.tk:latest
-    container_name: reiwadrawing.walkingmask.tk
-    restart: always
+    image: dev.localhost:latest
+    container_name: dev.localhost
+    restart: 'no'
     environment:
-      VIRTUAL_HOST: reiwadrawing.walkingmask.tk
-      LETSENCRYPT_HOST: reiwadrawing.walkingmask.tk
-      LETSENCRYPT_EMAIL: walkingmask@gmail.com
+      VIRTUAL_HOST: dev.localhost
     expose:
       - 80
     entrypoint: python /app/app.py
+    volumes:
+      - ./app:/app
 
 networks:
   default:
