@@ -3,8 +3,8 @@ html, body {
   height: 100%;
 }
 .bg-app {
-  background-color: #fccc04;
-  color: #f5fad2;
+  background-color: #6495ed;
+  color: #e0ffff;
 }
 #drawing-container {
   width: 100%;
@@ -68,16 +68,16 @@ progress {
   width: 60%;
   border: 2px solid #ccc;
   background: #ccc;
-  color: #fccc04;
+  color: #6495ed;
 }
 progress::-moz-progress-value {
-  background: #fccc04;
+  background: #6495ed;
 }
 progress::-moz-progress-bar {
   background: #ccc;
 }
 progress::-webkit-progress-value {
-  background: #fccc04;
+  background: #6495ed;
 }
 progress::-webkit-progress-bar {
   background: #ccc;
