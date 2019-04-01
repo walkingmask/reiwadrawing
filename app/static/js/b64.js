@@ -142,7 +142,7 @@ async function run () {
             $('#progress-container').addClass('hide');
             $('#result-container').removeClass('hide');
         }
-        reader.readAsDataURL(blob);
+        reader.readAsDataURL(imageBlob);
     });
 }
 
