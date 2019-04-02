@@ -125,7 +125,7 @@ def skip(e):
     global points_record
     global image_index
     points_record[image_index] = None
-    print(image_index, ':', points_record[image_index])
+    print(points_record[image_index])
     image_index += 1
     if image_index == len(images):
         dump(None)
@@ -136,7 +136,7 @@ def record(e):
     global points_record
     global image_index
     points_record[image_index] = get_points_coords(False)
-    print(image_index, ':', points_record[image_index])
+    print(points_record[image_index])
     image_index += 1
     if image_index == len(images):
         dump(None)
