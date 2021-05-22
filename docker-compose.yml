@@ -1,21 +1,34 @@
-version: "2"
+version: "3.8"
 
 services:
 
   reiwadrawing.walkingmask.tk:
-    build: ./
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: reiwadrawing.walkingmask.tk:latest
     container_name: reiwadrawing.walkingmask.tk
     restart: always
     environment:
       VIRTUAL_HOST: reiwadrawing.walkingmask.tk
+      VIRTUAL_PORT: 8080
       LETSENCRYPT_HOST: reiwadrawing.walkingmask.tk
-      LETSENCRYPT_EMAIL: walkingmask@gmail.com
+      LETSENCRYPT_EMAIL: reiwadrawing.walkingmask@gmail.com
     expose:
-      - 80
-    entrypoint: python /app/app.py
+      - 8080
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    init: true
+    command: uvicorn main:app --no-access-log --host 0.0.0.0 --port 8080
+    logging:
+      driver: fluentd
+      options:
+        cache-disabled: "true"
+        tag: "docker.service"
+        fluentd-async-connect: "true"
 
 networks:
   default:
     external:
-      name: shared
+      name: nginx-proxy-shared
