@@ -1,4 +1,0 @@
-fastapi
-aiofiles
-jinja2
-uvicorn[standard]
