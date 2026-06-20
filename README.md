@@ -1,6 +1,6 @@
 # 令和ドロー
 
-New era version of https://github.com/walkingmask/heiseidraw .
+New japanese era "Reiwa" version of https://github.com/walkingmask/heiseidraw .
 
 
 ## Requirements
